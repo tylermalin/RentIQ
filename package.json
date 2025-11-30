@@ -1,0 +1,40 @@
+{
+  "name": "approval-rent",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "scrape": "tsx scripts/scrapeCraigslistLa.ts"
+  },
+  "dependencies": {
+    "@auth/prisma-adapter": "^2.11.1",
+    "@prisma/client": "^6.19.0",
+    "bcryptjs": "^3.0.3",
+    "cheerio": "^1.1.2",
+    "lucide-react": "^0.555.0",
+    "next": "14.2.33",
+    "next-auth": "^5.0.0-beta.30",
+    "prisma": "^6.19.0",
+    "puppeteer": "^24.31.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^5.5.0"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cheerio": "^0.22.35",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.33",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5"
+  }
+}
