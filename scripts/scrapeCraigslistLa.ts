@@ -8,7 +8,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import * as cheerio from "cheerio";
-import puppeteer from "puppeteer";
+import puppeteer, { type Page } from "puppeteer";
 import { parseEligibilityFromListingFields } from "../lib/eligibilityParsing";
 import type { Listing } from "../lib/listings";
 
@@ -26,7 +26,7 @@ type RawResult = {
   neighborhood?: string;
 };
 
-async function scrapeSearchPage(page: puppeteer.Page): Promise<RawResult[]> {
+async function scrapeSearchPage(page: Page): Promise<RawResult[]> {
   await page.goto(SEARCH_URL, {
     waitUntil: "networkidle2",
     timeout: 30000,

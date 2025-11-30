@@ -404,7 +404,7 @@ export default function ProfilePage() {
                       <div className="relative h-32 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg mb-3 overflow-hidden">
                         {listing.primaryImageUrl || (listing.imageUrls && listing.imageUrls.length > 0) ? (
                           <img
-                            src={listing.primaryImageUrl || listing.imageUrls[0]}
+                            src={listing.primaryImageUrl || listing.imageUrls?.[0] || ''}
                             alt={listing.title}
                             className="w-full h-full object-cover"
                             onError={(e) => {

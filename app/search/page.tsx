@@ -1,6 +1,8 @@
 'use client';
 
-import { useState, FormEvent, useEffect } from 'react';
+export const dynamic = 'force-dynamic';
+
+import { useState, FormEvent, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import Link from 'next/link';
@@ -14,7 +16,7 @@ interface ListingWithScore {
   score: number;
 }
 
-export default function SearchPage() {
+function SearchPageContent() {
   const { data: session, status } = useSession();
   const searchParams = useSearchParams();
   const [monthlyIncome, setMonthlyIncome] = useState('');
@@ -598,6 +600,22 @@ export default function SearchPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gray-50 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center py-12">
+            <p className="text-gray-500">Loading...</p>
+          </div>
+        </div>
+      </div>
+    }>
+      <SearchPageContent />
+    </Suspense>
   );
 }
 
