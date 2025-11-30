@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { HiHeart, HiOutlineHeart, HiHome, HiUser, HiMail, HiPhone, HiMapPin } from 'react-icons/hi';
+import { HiHeart, HiOutlineHeart, HiHome, HiUser, HiMail, HiPhone } from 'react-icons/hi';
 import { FaBed, FaBath } from 'react-icons/fa';
 import { getAllListings, getListingById } from '@/lib/listings-store';
 import { getSavedListingIds, removeListingId } from '@/lib/saved-listings';
